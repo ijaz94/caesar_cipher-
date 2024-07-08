@@ -17,9 +17,9 @@ def caesar_cipher(string, shift_factor)
   string_ordnums = plain_text.map {|s| s.ord}
    #  add shift_factor to ordinal number's of alphabates only 
   add_shift = string_ordnums.map do |num|
-    if (num >= 65 && num + shift_factor  < 90) || (num >= 97 && num + shift_factor < 122)
+    if (num >= 65 && num + shift_factor  <= 90) || (num >= 97 && num + shift_factor <= 122)
       num + shift_factor
-    elsif ( num + shift_factor >= 90) || ( num + shift_factor >= 122)
+    elsif ( num + shift_factor > 90) || ( num + shift_factor > 122)
       ( num - 26) + shift_factor 
     else
       num
